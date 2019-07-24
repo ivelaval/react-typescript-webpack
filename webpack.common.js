@@ -1,7 +1,8 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   output: {
@@ -18,14 +19,6 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-      },
     },
     runtimeChunk: 'single',
   },
@@ -47,13 +40,6 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-              reloadAll: true,
-            },
-          },
           'style-loader',
           'css-loader',
           'sass-loader',
@@ -61,4 +47,15 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React + typescript',
+      template: path.resolve(__dirname, 'src', 'app', 'index.html')
+    }),
+  ],
 };
