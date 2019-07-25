@@ -1,10 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from '@app/components/App';
-import '@app/assets/sass/style.scss';
+import App from '@components/app';
+import project from '@core/settings/project.json'
+import '@assets/sass/style.scss';
 
 const Index = () => {
-  return <App title='React typescript starter kit!' />;
+  return <App title={project.title} />;
 };
 
 ReactDOM.render(<Index />, document.getElementById('root'));

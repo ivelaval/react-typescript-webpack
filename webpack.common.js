@@ -3,6 +3,7 @@ const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPl
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const project = require('./src/app/core/settings/project');
 
 module.exports = {
   output: {
@@ -28,8 +29,8 @@ module.exports = {
         loader: "source-map-loader"
       },
       {
-        test: /\.svg$/,
-        loader: 'raw-loader'
+        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader : 'file-loader'
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -49,7 +50,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'React + typescript',
+      title: project.title,
       template: path.resolve(__dirname, 'src', 'app', 'index.html')
     }),
   ],

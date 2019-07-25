@@ -10,9 +10,14 @@
 		"jsx": "react",
 		"allowJs": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "paths": {
       "@app/*": ["./src/app/*"],
-    },
+      "@components/*": ["./src/app/components/*"],
+      "@assets/*": ["./src/app/assets/*"],
+      "@core/*": ["./src/app/core/*"]
+    }
   },
   "include": [
     "./src/**/*"

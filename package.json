@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "setup": "rimraf yarn.lock && rimraf node_modules/ && yarn",
     "build:dev": "./node_modules/.bin/webpack --config webpack.dev.js",
     "build:prod": "./node_modules/.bin/webpack -p --config webpack.prod.js",
     "serve": "webpack-dev-server --open --config webpack.dev.js"
@@ -27,11 +28,13 @@
     "awesome-typescript-loader": "^5.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.1.0",
+    "file-loader": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^3.1.0",
+    "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
