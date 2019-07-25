@@ -16,12 +16,6 @@ module.exports = {
         new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
     ],
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-    runtimeChunk: 'single',
-  },
   module: {
     rules: [
       {
@@ -49,8 +43,9 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '[contenthash].css',
+      chunkFilename: '[hash].css',
+      ignoreOrder: true,
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
