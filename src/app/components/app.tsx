@@ -1,10 +1,26 @@
 import * as React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import logo from '@assets/images/react-icon.svg';
 
-export interface IAppProps {
+const DIV = styled.div`
+  font-size: 2rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  width: 500px;
+  text-align: center;
+
+  :hover {
+    color: green;
+  }
+`;
+
+interface IAppProps {
   title: string;
 }
 
 export default function App(props: IAppProps) {
-  return <h1><img src={logo}  alt={'React project'} width={120}/> {props.title}</h1>;
+  return <DIV>
+    <div><img src={logo} alt={'React project'} width={120}/></div>
+    <div>{props.title}</div>
+  </DIV>;
 }

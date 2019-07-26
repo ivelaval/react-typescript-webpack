@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "types": ["react"],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@components/*": ["./src/app/components/*"],
@@ -21,5 +22,8 @@
   },
   "include": [
     "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

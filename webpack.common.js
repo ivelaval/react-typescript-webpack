@@ -71,7 +71,6 @@ module.exports = {
       logo: project.favicon,
       prefix: 'images/',
       emitStats: false,
-      statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true,
       background: 'transparent',
