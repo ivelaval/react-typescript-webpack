@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import logo from '@assets/images/react-icon.svg';
+import { InputElement } from './Example';
 
 const DIV = styled.div`
   font-size: 2rem;
@@ -8,7 +9,6 @@ const DIV = styled.div`
   margin-top: 10rem;
   width: 500px;
   text-align: center;
-
   :hover {
     color: green;
   }
@@ -18,9 +18,10 @@ interface IAppProps {
   title: string;
 }
 
-export default function App(props: IAppProps) {
+export const App = ({ title }: IAppProps) => {
   return <DIV>
     <div><img src={logo} alt={'React project'} width={120}/></div>
-    <div>{props.title}</div>
+    <div>{title}</div>
+    <InputElement />
   </DIV>;
 }

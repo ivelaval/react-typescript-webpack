@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "setup": "rimraf yarn.lock && rimraf node_modules/ && yarn",
+    "setup": "rm -rf node_modules && rm -rf yarn.lock && yarn",
     "build:dev": "./node_modules/.bin/webpack --config webpack.dev.js",
     "build:prod": "./node_modules/.bin/webpack -p --config webpack.prod.js",
     "serve": "webpack-dev-server --open --config webpack.dev.js",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["React","Typescript", "Jsx", ""],
+  "author": "Ivan Avila <ivelaval@gmail.com>",
   "license": "ISC",
   "description": "",
   "dependencies": {
