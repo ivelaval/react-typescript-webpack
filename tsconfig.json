@@ -12,11 +12,20 @@
 		"lib": ["es5", "es6", "dom"],
 		"jsx": "react",
 		"allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["react"],
     "paths": {
       "@app/*": ["./src/app/*"],
-    },
+      "@components/*": ["./src/app/components/*"],
+      "@assets/*": ["./src/app/assets/*"],
+      "@core/*": ["./src/app/core/*"]
+    }
   },
   "include": [
     "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
