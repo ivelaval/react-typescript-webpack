@@ -10,7 +10,7 @@ const DIV = styled.div`
   width: 500px;
   text-align: center;
   :hover {
-    color: green;
+    color: red;
   }
 `;
 
