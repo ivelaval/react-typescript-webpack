@@ -1,9 +1,15 @@
-import * as React from 'react';
+import React from 'react';
+import { InputElement } from './Example';
 
 export interface IAppProps {
   title: string;
 }
 
-export default function App(props: IAppProps) {
-  return <h1>{props.title}</h1>;
+export const App = ({ title }: IAppProps) => {
+  return (
+    <div>
+      {title}<br />
+      <InputElement />
+    </div>
+  );
 }
